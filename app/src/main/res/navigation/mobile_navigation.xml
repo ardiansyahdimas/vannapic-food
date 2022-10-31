@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_food">
+
+    <fragment
+        android:id="@+id/navigation_food"
+        android:name="com.vanapic.food.ui.food.FoodFragment"
+        android:label="@string/title_food"
+        tools:layout="@layout/fragment_food" />
+
+    <fragment
+        android:id="@+id/navigation_beverage"
+        android:name="com.vanapic.food.ui.beverage.BeverageFragment"
+        android:label="@string/title_beverage"
+        tools:layout="@layout/fragment_beverage" />
+
+    <fragment
+        android:id="@+id/navigation_discount"
+        android:name="com.vanapic.food.ui.promo.PromoFragment"
+        android:label="@string/title_promo"
+        tools:layout="@layout/fragment_promo" />
+
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.vanapic.food.ui.favorite.FavoriteFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite" />
+</navigation>

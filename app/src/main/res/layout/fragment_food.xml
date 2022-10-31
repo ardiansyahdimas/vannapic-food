@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_food"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:text="What's your favorite food?"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    android:gravity="center_vertical"
+                    android:padding="15dp"
+                    tools:ignore="HardcodedText" />
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottie_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent "
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="junk_food.json"
+                    app:lottie_loop="true" />
+
+            </LinearLayout>
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_border"
+                android:layout_marginBottom="3dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textCursorDrawable="@null"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@null"
+                app:queryHint="Search your favorite food here.."
+                app:showDividers="end" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_food"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:paddingBottom="120dp"
+                android:paddingTop ="5dp"
+                tools:listitem="@layout/food_item"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:paddingBottom="120dp"
+                android:paddingTop ="5dp"
+                tools:listitem="@layout/food_item"/>
+            <include
+                android:id="@+id/no_data"
+                layout="@layout/view_no_data"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
